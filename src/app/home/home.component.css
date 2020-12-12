@@ -1,0 +1,24 @@
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-radius: 10px;
+    
+    border: 1px solid black;
+}
+
+.bg-2 { 
+        background-color: #474e5d; /* Dark Blue */
+        color: #ffffff;
+}
+
+
+span{
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+button{
+    margin-top: 10px;
+    width: 100%;
+}

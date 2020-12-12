@@ -1,0 +1,332 @@
+<div class="row">
+    <div class="col-xs-12">
+
+        <h2 class="text-center" style="text-decoration: underline; font-weight: bold;">Place Your Appointment </h2>
+        
+        <hr>
+        <form [formGroup]="appointmentForm" (ngSubmit) = "onSubmit()" style="margin-top:30px;">
+            <div class="row">
+                <div class="col-md-2">
+                    <label  for="name"> Name </label>
+                </div>
+                                
+                <div class="col-md-5">
+                    <input id="fname" 
+                    class="form-control"
+                    formControlName= "fname"
+                    autofocus>
+                    <span>First Name </span>
+                </div>
+
+                <div class="col-md-4">
+                    <input 
+                    id="lname" 
+                    class="form-control"
+                    formControlName="lname">
+                    <span>Last Name </span>
+                </div>
+                
+            </div>
+
+            
+            <hr>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label >  Shipping Adrress </label>
+                </div>
+                
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="street"
+                            class="form-control"
+                            formControlName="street">
+                            
+                        <span style="font-size:15px;">Street</span>
+                    </div>
+                    
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="city"
+                            class="form-control"
+                            formControlName="city">
+                            
+                        <span style="font-size:15px;">City</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="state"
+                            class="form-control"
+                            formControlName="state">
+                            
+                        <span style="font-size:15px;">State</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            id="country"
+                            class="form-control"
+                            formControlName="country">
+                            
+                        <span style="font-size:15px;">Country</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input
+                            type="number"
+                            id="pinCode"
+                            maxlength="6"
+                            class="form-control"
+                            formControlName="pinCode">
+                            
+                        <span style="font-size:15px;">Pin Code</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label > Buyer's Name </label>
+                </div>
+                                
+                <div class="col-md-4">
+                    <input id="Bfname" 
+                    class="form-control"
+                    formControlName="Bfname">
+                    <span>First Name </span>
+                </div>
+
+                <div class="col-md-4">
+                    <input id="Blname" 
+                    class="form-control"
+                    formControlName="Blname">
+                    <span>Last Name </span>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="name">  Mobile Number </label>
+                </div>
+                                
+                <div class="col-md-5">
+                    <div class="row" style="display:flex">
+                        <span style="font-weight: bold;font-size: 20px;">+91 </span> 
+                        <input id="mob" 
+                        type="number" 
+                        class="form-control" 
+                        style="margin-left: 5px;"
+                        formControlName="mob">
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row form-inline">
+                <div class="col-md-6" style="display: flex;">
+                    <label >  Email Address </label>
+                    <input id="email" 
+                    class="form-control" 
+                    style="margin-left: 15px;"
+                    formControlName="email">
+                </div>
+
+                <div class="col-md-6" style="display: flex;" >
+                    <label >  Age  </label>
+                    <input id="age" 
+                    placeholder="30 - 60"
+                    type="number" 
+                    class="form-control" 
+                    style="margin-left: 15px;"
+                    formControlName="age">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <label >Trainer Preference </label>
+                </div>
+
+                <div class="col-md-4 form-check-inline">
+                    <label class="form-check-label"  >
+                      <input type="radio" style="margin: 4px;" class="form-check-input" id="male" name="trainer" value="male" formControlName="trainer">Male Trainer
+                    </label>
+                </div>
+                <div class=" col-md-4 form-check-inline">
+                    <label class="form-check-label"  >
+                      <input type="radio" style="margin: 4px;" class="form-check-input" id="female" name="trainer" value="female" formControlName="trainer">Female Trainer
+                    </label>
+                </div>
+                <div class=" col-md-4 form-check-inline" >
+                    <label class="form-check-label" >
+                      <input type="radio" style="margin: 4px;" class="form-check-input"  id="no" name="trainer" value="No" formControlName="trainer"> No Preference  
+                    </label>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <label >Do you need Physio Therapist ? </label>
+                </div>
+
+                <div class="col-md-6 form-check-inline">
+                    <input type="radio" class="form-check-input" id="yes" name="therapist" value="Yes" formControlName ="therapist">
+                    <label class="form-check-label" style="margin-left: 5px;" >Yes</label>
+
+                </div>
+                <div class=" col-md-6 form-check-inline">
+                    <input type="radio"  class="form-check-input" id="no" name="therapist" value="No" formControlName ="therapist">
+                    <label class="form-check-label" style="margin-left: 5px;">
+                      No
+                    </label>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <label >Select a Package  </label>
+                </div>
+
+                <div class="col-xs-12 form-check-inline">
+                    <label class="form-check-label" >
+                      <input 
+                      type="radio" 
+                      class="form-check-input" 
+                      id="500" 
+                      name="package" 
+                      value="500" 
+                      formControlName="package" 
+                      (change)="changePackage($event)"
+                      > One Time Assesment Only (rps. 500)
+                    </label>
+                </div>
+                <div class=" col-xs-12 form-check-inline">
+                    <label class="form-check-label" >
+                      <input 
+                      type="radio"  
+                      class="form-check-input" 
+                      id="1600" 
+                      name="package" 
+                      value="1600" 
+                      formControlName="package" 
+                      (change)="changePackage($event)"
+                      > 4 session per week (rs. 400 per session)
+                    </label>
+                </div>
+                <div class=" col-xs-12 form-check-inline">
+                    <label class="form-check-label" >
+                      <input 
+                      type="radio"  
+                      class="form-check-input" 
+                      id="1500" 
+                      name="package" 
+                      value="1500" 
+                      formControlName="package" 
+                      (change)="changePackage($event)"
+                      >  5 session per week (rs. 300 per session)
+                    </label>
+                </div>
+                <div class=" col-xs-12 form-check-inline">
+                    <label class="form-check-label" >
+                      <input 
+                      type="radio"  
+                      class="form-check-input" 
+                      id="0" 
+                      name="package" 
+                      value="0" 
+                      formControlName="package" 
+                      (change)="changePackage($event)"> Other
+                    </label>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row">
+  
+                <div class="col-xs-6">
+                        
+                        <input 
+                        type="text" 
+                        name="quote"
+                        class="form-control" 
+                        style="margin-left: 5px;" 
+                        formControlName ="quote">     
+                        <span >(Quote will be shared on Phone call)</span>           
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row form-inline">
+                <div class="col-md-6" style="display: inline-flex;">
+                    <label style="margin-left: 4px; margin-top: 10px;"> Amount </label>
+
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    style="margin-left: 15px;"
+                    id="rupees"
+                    name = "rupees"
+                    formControlName="rupees"
+                    > 
+                    <span style="margin-left: 4px; margin-top: 10px;">  Rupees  </span>
+                    <input 
+                    type="number" 
+                    class="form-control" 
+                    style="margin-left: 15px;"
+                    id="paise"
+                    name="paise"
+                    formControlName="paise"
+                    >
+
+                    <span style="margin-left: 4px; margin-top: 10px;">  Paise  </span>
+                </div>
+
+            </div>
+
+            <hr>
+            
+            <button type="submit" class="btn btn-lg btn-primary " style="margin-bottom: 10px;" [disabled]="!appointmentForm.valid"> Submit Request</button>
+
+        </form>
+    </div>
+</div>

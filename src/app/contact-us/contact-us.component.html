@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-xs-12">
+
+        <h2 class="text-center" style="text-decoration: underline; font-weight: bold;">Contact us</h2>
+        <br>
+        <p class="text-center" style="font-size: 18px;">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+        <hr>
+        <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                    <input 
+                    class="form-control" 
+                    name="firstName" 
+                    placeholder="Firstname" 
+                    type="text"
+                    formControlName = "firstName" 
+                    autofocus />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                    <input 
+                    class="form-control" 
+                    name="lastName" 
+                    placeholder="Lastname" 
+                    type="text" 
+                    formControlName="lastName"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                    <input 
+                    class="form-control" 
+                    name="email" 
+                    placeholder="E-mail" 
+                    type="text" 
+                    formControlName = "email"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                    <input 
+                    class="form-control" 
+                    name="subject" 
+                    placeholder="Subject" 
+                    type="text" 
+                    formControlName="subject" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <textarea 
+                    style="resize:vertical;" 
+                    class="form-control" 
+                    placeholder="Message..." 
+                    rows="6" 
+                    name="message" 
+                    formControlName ="message" ></textarea>
+                </div>
+            </div>
+            <br>
+            <button 
+            class="btn btn-lg btn-primary" 
+            type="submit"
+            [disabled]="!contactForm.valid"
+            style="margin-bottom: 10px;"
+            >Submit</button>
+
+        </form>
+        
+
+
+    </div>    
+</div>

@@ -1,0 +1,84 @@
+<div class="row">
+
+  <h2 class="text-center" style="text-decoration: underline; font-weight: bold;">View Appointment </h2>
+      
+      <hr>
+
+    <div class="col-xs-7 pull-right " style="display: flex;">
+
+      
+      <input type="text" class="form-control" [(ngModel)]= "searchText" placeholder="Trainer Preference Male or Female">
+      <button 
+      type="button"  
+      class="btn btn-md btn-success" 
+      (click)="searchRecords()"
+      style="margin-left: 5px;"
+      >
+      Search</button>
+
+      <button 
+      type="button"  
+      class="btn btn-md btn-warning " 
+      (click)="clearSearch()"
+      style="margin-left: 5px;"
+      >
+      Clear</button>
+
+    </div>
+
+    <br>
+    <br>
+    <hr>
+
+    <div class="col-xs-12">
+        <table class="table table-striped table-hover" >
+            <thead>
+              <tr>
+                <th>Sr No </th>
+                <th>Name</th>
+                <th>City/Address</th>
+                <th>Package</th>
+                <th>Trainer Preference</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+
+            <tbody 
+            *ngIf = "searchText== ''">            
+              <tr
+              *ngFor ="let appointment of appointments ; let i = index ">
+                  <td> {{i+1}} </td>
+                  <td> {{appointment.fname}} {{appointment.lname}}</td>
+                  <td> {{appointment.state}} , {{appointment.city}} </td>
+                  <td> {{appointment.s_package}} </td>
+                  <td> {{appointment.trainer}} </td>
+                  <td> {{appointment.mob}} </td>
+              </tr>              
+            </tbody>
+
+            <tbody 
+            *ngIf = "searchText !=''">            
+              <tr
+              *ngFor ="let appointment of appointments ; let i = index ">
+                  <td 
+                  *ngIf="appointment.trainer == searchText "> {{i+1}} </td>
+                  <td
+                  *ngIf="appointment.trainer == searchText "> {{appointment.fname}} {{appointment.lname}}</td>
+                  <td
+                  *ngIf="appointment.trainer == searchText "> {{appointment.state}} , {{appointment.city}} </td>
+                  <td
+                  *ngIf="appointment.trainer == searchText "> {{appointment.s_package}} </td>
+                  <td
+                  *ngIf="appointment.trainer == searchText "> {{appointment.trainer}} </td>
+                  <td
+                  *ngIf="appointment.trainer == searchText "> {{appointment.mob}} </td>
+              </tr>              
+
+              <!-- <h1>Search Result</h1> -->
+
+            </tbody>
+
+
+          </table>
+    </div>
+</div>
